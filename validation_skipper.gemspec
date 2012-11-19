@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["npearson72@gmail.com"]
   gem.description   = %q{If you need a way to easily skip validations on some attributes and only in certain cases, this gem will allow you to do it in a clean and elegant way.}
   gem.summary       = %q{Easily skip validations in Rails}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/npearson72/validation_skipper"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
