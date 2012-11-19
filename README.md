@@ -1,10 +1,6 @@
 # ValidationSkipper
 
-Every once in a while you may want to skip validations on some of the attributes in your model.
-
-This Rails gem will help you easily declare which attributes to skip and allow you to choose when to skip them.
-
-**WARNING:** Skipping validations is not considered best practice (albeit sometimes it is necessary), so skip them at your own risk!
+This Rails gem lets you easily declare which attribute validations to skip in you models, and choose when to skip them in your controllers.
 
 ## Installation
 
