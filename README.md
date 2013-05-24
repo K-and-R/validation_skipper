@@ -28,18 +28,22 @@ Let's say you have a User model with a name, phone, and password.
     validates :phone, :presence => true
     validates :password, :presence => true
 
-##### Step 1: Declare which validations are allowed to be skipped:
+##### Step 1: Include the ValidationSkipper module in the model:
+
+    include ValidationSkipper
+
+##### Step 2: Declare which validations are allowed to be skipped:
 
     can_skip_validation_for :name, :phone, :password
 
 (Note: this does not automatically skip them, but makes them eligible for skipping)
 
 
-##### Step 2: Change the validations to look like these:
+##### Step 3: Change the validations to look like these:
 
-    validates :name, :presence => true, :unless => skip_name_validation?
-    validates :phone, :presence => true, :unless => skip_phone_validation?
-    validates :password, :presence => true, :unless => skip_pasword_validation?
+    validates :name, :presence => true, :unless => Proc.new { skip_name_validation? }
+    validates :phone, :presence => true, :unless => Proc.new { skip_phone_validation? }
+    validates :password, :presence => true, :unless => Proc.new { skip_pasword_validation? }
 
 ### In your controller:
 

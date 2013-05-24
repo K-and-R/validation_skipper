@@ -13,16 +13,8 @@ module ValidationSkipper  # Creates "attr_accessor" methods and related boolean 
     end
   end
 
-  # Hook to include ClassMethods as... class methods.
-  def self.included(base)
-    base.extend ClassMethods
-  end
-
   # Defines a "skip_validation_for" method to use in controllers.
   def skip_validation_for(*args)
     args.each { |attr| send("skip_#{attr}_validation=", true) }
   end
 end
-
-# include the extension 
-ActiveRecord::Base.send(:include, ValidationSkipper)
