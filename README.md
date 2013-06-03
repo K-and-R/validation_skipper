@@ -41,9 +41,9 @@ Let's say you have a User model with a name, phone, and password.
 
 ##### Step 3: Change the validations to look like these:
 
-    validates :name, :presence => true, :unless => Proc.new { skip_name_validation? }
-    validates :phone, :presence => true, :unless => Proc.new { skip_phone_validation? }
-    validates :password, :presence => true, :unless => Proc.new { skip_pasword_validation? }
+    validates :name, :presence => true, :unless => Proc.new { |u| u.skip_name_validation? }
+    validates :phone, :presence => true, :unless => Proc.new { |u| u.skip_phone_validation? }
+    validates :password, :presence => true, :unless => Proc.new { |u| u.skip_pasword_validation? }
 
 ### In your controller:
 
