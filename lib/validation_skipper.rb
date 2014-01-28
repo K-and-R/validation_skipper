@@ -14,10 +14,8 @@ module ValidationSkipper
     end
   end
 
-  module InstanceMethods
-    def skip_validation_for(*args)
-      args.each { |attr| send("skip_#{attr}_validation=", true) }
-    end
+  def skip_validation_for(*args)
+    args.each { |attr| send("skip_#{attr}_validation=", true) }
   end
 end
 ActiveRecord::Validations.send(:include, ValidationSkipper)
