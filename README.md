@@ -43,7 +43,7 @@ Let's say you have a User model with a name, phone, and password.
 
     validates :name, :presence => true, :unless => Proc.new { |u| u.skip_name_validation? }
     validates :phone, :presence => true, :unless => Proc.new { |u| u.skip_phone_validation? }
-    validates :password, :presence => true, :unless => Proc.new { |u| u.skip_pasword_validation? }
+    validates :password, :presence => true, :unless => Proc.new { |u| u.skip_password_validation? }
 
 ### In your controller:
 
