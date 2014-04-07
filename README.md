@@ -32,6 +32,10 @@ Let's say you have a User model with a name, phone, and password.
 
     include ValidationSkipper
 
+or `require` it in `config/application.rb` to have it included in all models
+
+    require 'validation_skipper'
+
 ##### Step 2: Declare which validations are allowed to be skipped:
 
     can_skip_validation_for :name, :phone, :password
