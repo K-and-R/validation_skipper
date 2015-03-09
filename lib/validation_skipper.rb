@@ -1,4 +1,3 @@
-require "validation_skipper/version"
 require "active_record"
 
 module ValidationSkipper
@@ -18,5 +17,4 @@ module ValidationSkipper
     args.each { |attr| send("skip_#{attr}_validation=", true) }
   end
 end
-ActiveRecord::Validations.send(:include, ValidationSkipper)
-ActiveModel::Validations.send(:include, ValidationSkipper)
+ActiveRecord::Base.send(:include, ValidationSkipper)
