@@ -1,3 +1,4 @@
+Copyright (c) 2019 K&R Software, LLC
 Copyright (c) 2012 Nathan Pearson
 
 MIT License
