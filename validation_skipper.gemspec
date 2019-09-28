@@ -3,20 +3,25 @@ lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'validation_skipper/version'
 
-Gem::Specification.new do |gem|
-  gem.name          = "validation_skipper"
-  gem.version       = ValidationSkipper::VERSION
-  gem.authors       = ["Nathan Pearson"]
-  gem.email         = ["npearson72@gmail.com"]
-  gem.description   = %q{If you need a way to easily skip validations on some attributes and only in certain cases, this gem will allow you to do it in a clean and elegant way.}
-  gem.summary       = %q{Easily skip validations in Rails}
-  gem.homepage      = "https://github.com/npearson72/validation_skipper"
+Gem::Specification.new do |s|
+  s.name          = 'validation_skipper'
+  s.version       = ValidationSkipper::VERSION
+  s.authors       = ['Nathan Pearson', 'Karl Wilbur']
+  s.email         = ['npearson72@gmail.com', 'karl@kandrsoftware.com']
+  s.description   = %q{If you need a way to easily skip validations on some attributes and only in certain cases, this gem will allow you to do it in a clean and elegant way.}
+  s.summary       = %q{Easily skip validations in Rails}
+  s.homepage      = 'https://github.com/K-and-R/validation_skipper'
 
-  gem.files         = `git ls-files`.split($/)
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
-  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
-  gem.require_paths = ["lib"]
-  gem.add_development_dependency "bundler", "~> 1.3"
-  gem.add_development_dependency "rake"
-  gem.add_runtime_dependency "activerecord"
+  s.files         = `git ls-files`.split($/)
+  s.test_files    = `git ls-files -- spec/*`.split('\n')
+
+  s.require_paths = ['lib']
+
+  s.add_development_dependency 'rake'
+  s.add_development_dependency 'pry'
+  s.add_development_dependency 'rspec'
+  s.add_development_dependency 'codeclimate-test-reporter'
+  s.add_development_dependency 'simplecov'
+
+  s.add_runtime_dependency 'activerecord'
 end
