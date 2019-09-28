@@ -1,6 +1,9 @@
 # ValidationSkipper
 
-(Forked from https://github.com/npearson72/validation_skipper)
+**Forked from [npearson72/validation_skipper](https://github.com/npearson72/validation_skipper)**.
+
+[![Code Climate](https://codeclimate.com/github/K-and-R/validation_skipper/badges/gpa.svg)](https://codeclimate.com/github/K-and-R/validation_skipper)
+[![Test Coverage](https://codeclimate.com/github/K-and-R/validation_skipper/badges/coverage.svg)](https://codeclimate.com/github/K-and-R/validation_skipper/coverage)
 
 This Rails gem lets you easily declare which attribute validations to skip in
 you models, and choose when to skip them in your controllers.
